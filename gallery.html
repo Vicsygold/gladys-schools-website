@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Gladys Schools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-image: linear-gradient(rgba(15, 40, 98, 0.85), rgba(15, 40, 98, 0.85)), url('assets/new_hero.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-title {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+        
+        /* Modern Gallery Grid */
+        .gallery-container {
+            padding: 40px 0 80px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            grid-auto-flow: dense;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            aspect-ratio: 4/3;
+            background: var(--bg-light);
+            cursor: pointer;
+        }
+
+        /* Create some variation in sizes for a masonry feel */
+        .gallery-item:nth-child(4n + 1) {
+            grid-column: span 2;
+            grid-row: span 2;
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-item:nth-child(6n + 3) {
+            grid-row: span 2;
+            aspect-ratio: 2/3;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 40, 98, 0.9), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-icon {
+            color: var(--accent);
+            font-size: 2rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease 0.1s;
+        }
+
+        .gallery-item:hover .gallery-icon {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Fullscreen Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            inset: 0;
+            background: rgba(7, 19, 48, 0.95);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease forwards;
+        }
+        .modal-img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+        }
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: var(--white);
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .close-modal:hover {
+            color: var(--accent);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            .gallery-item:nth-child(4n + 1),
+            .gallery-item:nth-child(6n + 3) {
+                grid-column: span 1;
+                grid-row: span 1;
+                aspect-ratio: 4/3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar scrolled">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo.png" alt="Gladys Schools Logo" class="logo-img">
+                    <span class="logo-text">Gladys <span class="accent">Schools</span></span>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="index.html#academics">Academics</a>
+                <a href="admission.html">Admissions</a>
+                <a href="career.html">Careers</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="https://forms.gle/RJkUyszHGyeey3H2A" target="_blank" class="btn btn-primary">Apply Now</a>
+            </div>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container fade-in-up">
+            <h1 class="page-title">Photo Gallery</h1>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8); margin-bottom: 0;">A glimpse into life, learning, and excellence at Gladys Schools.</p>
+        </div>
+    </div>
+
+    <section class="gallery-container bg-light">
+        <div class="container">
+            <div class="section-header text-center fade-in-up delay-1">
+                <span class="section-tag">Moments</span>
+                <h2 class="section-title">Our <span class="accent">Memories</span></h2>
+            </div>
+            
+            <div class="gallery-grid fade-in-up delay-2" id="gallery-grid">
+                <!-- Images will be dynamically inserted here via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for viewing images -->
+    <div class="modal" id="imageModal">
+        <i class="fas fa-times close-modal" id="closeModal"></i>
+        <img src="" alt="Gallery Image Enlagred" class="modal-img" id="modalImage">
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="logo footer-logo">
+                        <img src="assets/logo.png" alt="Gladys Schools Logo" class="logo-img">
+                        <span class="logo-text">Gladys <span class="accent">Schools</span></span>
+                    </div>
+                    <p>Empowering minds and shaping the future through quality, affordable education and strong moral values.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#academics">Academics</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Campuses</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 88 Demurin St, Ketu</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 24 Adepitan St, Alapere Ketu</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 1 Ola Bello St, Ketu</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +234 902 371 9502</li>
+                        <li><i class="fas fa-envelope"></i> info@gladysschools.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gladys Schools. All Rights Reserved. Designed with excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme toggle: bottom LEFT -->
+    <div class="theme-container">
+        <button id="theme-toggle" class="float-btn theme-float" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+    </div>
+
+    <!-- WhatsApp: bottom RIGHT -->
+    <div class="whatsapp-container">
+        <a href="https://wa.me/2348025016072" target="_blank" class="float-btn whatsapp-float" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            let newTheme = theme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            if (newTheme === 'dark') {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+        // Simple sticky navbar effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.add('scrolled');
+            }
+        });
+        
+        // Ensure navbar is styled correctly on load
+        document.querySelector('.navbar').style.background = 'rgba(255, 255, 255, 0.95)';
+        document.querySelector('.navbar').style.boxShadow = 'var(--shadow-sm)';
+        document.querySelectorAll('.nav-links a').forEach(el => el.style.color = 'var(--text-main)');
+        document.querySelector('.logo-text').style.color = 'var(--primary)';
+        document.querySelector('.nav-links a.active').style.color = 'var(--accent)';
+
+        // Gallery Images List (Extracted from the original site)
+        const imageUrls = [
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_3070_filtered.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_3026_filtered.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_3004_filtered-2.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_9186_filtered-scaled.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_2879_filtered.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_2919_filtered-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_2984_filtered.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_2899_filtered.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_2865_filtered-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_2952_filtered.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_2986_filtered.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_2946_filtered-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_3001_filtered-1-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_3169_filtered-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_2971_filtered-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_1901_filtered.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_1918_filtered.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_1882_filtered.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_1865_filtered.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_2128_filtered-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_1689_filtered.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/Gladys-High-School-Ketu-Copy-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/11/Students-4.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/11/Students-2.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_6441Y-158_filtered-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_6441Y-159_filtered-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_7175_filtered-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_7139_filtered-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_7185_filtered-1.jpg",
+            "https://gladysschools.com/wp-content/uploads/2021/12/DSC_7148_filtered-1.jpg"
+        ];
+
+        const galleryGrid = document.getElementById('gallery-grid');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeModal = document.getElementById('closeModal');
+
+        // Render images
+        imageUrls.forEach((url, index) => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = `Gladys Schools Gallery Image ${index + 1}`;
+            img.className = 'gallery-img';
+            img.loading = 'lazy'; // Improve page load performance
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'gallery-overlay';
+            
+            const icon = document.createElement('i');
+            icon.className = 'fas fa-search-plus gallery-icon';
+            
+            overlay.appendChild(icon);
+            item.appendChild(img);
+            item.appendChild(overlay);
+            
+            // Open modal on click
+            item.addEventListener('click', () => {
+                modalImg.src = url;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+            
+            galleryGrid.appendChild(item);
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions | Gladys Schools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-image: linear-gradient(rgba(15, 40, 98, 0.85), rgba(15, 40, 98, 0.85)), url('assets/new_hero.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-title {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+        
+        /* Process Steps */
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .step-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            border-left: 4px solid var(--accent);
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .step-content h3 {
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+        
+        /* FAQ Accordion */
+        .faq-item {
+            background: var(--white);
+            border-radius: 8px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: var(--primary);
+            background: var(--white);
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: var(--transition);
+        }
+        .faq-question:hover {
+            color: var(--accent);
+        }
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--bg-light);
+        }
+        .faq-answer p {
+            padding: 0 24px 24px;
+            color: var(--text-main);
+        }
+
+        /* Contact Info Cards */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+        .contact-card {
+            background: var(--primary);
+            color: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: var(--primary-light);
+        }
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .contact-card h3 {
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .contact-card p, .contact-card a {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .contact-card a:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar scrolled">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo.png" alt="Gladys Schools Logo" class="logo-img">
+                    <span class="logo-text">Gladys <span class="accent">Schools</span></span>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="index.html#academics">Academics</a>
+                <a href="admission.html" class="active">Admissions</a>
+                <a href="career.html">Careers</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="https://forms.gle/RJkUyszHGyeey3H2A" target="_blank" class="btn btn-primary">Apply Now</a>
+            </div>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container fade-in-up">
+            <h1 class="page-title">Admissions</h1>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8); margin-bottom: 0;">Join the Gladys Schools family. Admission is currently open.</p>
+            <div class="mt-4" style="margin-top: 32px;">
+                <a href="https://forms.gle/RJkUyszHGyeey3H2A" target="_blank" class="btn btn-primary btn-large">Start Application</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="section bg-light">
+        <div class="container">
+            <div class="grid grid-2">
+                <div>
+                    <span class="section-tag">How to Apply</span>
+                    <h2 class="section-title">Admissions <span class="accent">Process</span></h2>
+                    <p class="mb-4" style="margin-bottom: 24px;">Admission is in progress into all classes for the academic session. We welcome students from diverse backgrounds to experience our rich curriculum and supportive environment.</p>
+                    
+                    <div class="process-steps">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Obtain Form & Prospectus</h3>
+                                <p>Forms and Prospectus are available for sale in the school between 8:00 am – 4:00 pm (Mon-Fri).</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Entrance Examination</h3>
+                                <p>Entrance examinations are conducted yearly. Each candidate is tested in Mathematics, English Language, and General Paper.</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Interview</h3>
+                                <p>Successful candidates from the entrance examination are interviewed along with their parents before final admission is offered.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <span class="section-tag">Academics</span>
+                    <h2 class="section-title">Academic <span class="accent">Standing</span></h2>
+                    <div style="background: var(--white); padding: 40px; border-radius: 16px; box-shadow: var(--shadow-sm); height: 100%;">
+                        <p style="margin-bottom: 24px;">The school curriculum is very broad and quite stimulating. We operate the Federal Ministry of Education policy with the early years leading to Basic Education Certificate Examination (BECE) as well as the Senior Secondary Education.</p>
+                        <p style="margin-bottom: 24px;">We are proud to offer a comprehensive range of subjects, catering to diverse career paths and interests. All subjects in the following departments are offered:</p>
+                        <ul class="check-list">
+                            <li><i class="fas fa-check-circle"></i> Sciences (Physics, Chemistry, Biology)</li>
+                            <li><i class="fas fa-check-circle"></i> Commercial Subjects</li>
+                            <li><i class="fas fa-check-circle"></i> Arts & Humanities</li>
+                        </ul>
+                        <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid rgba(0,0,0,0.1);">
+                            <h3 style="color: var(--primary); margin-bottom: 16px;">Ready to Enroll?</h3>
+                            <a href="https://forms.gle/RJkUyszHGyeey3H2A" target="_blank" class="btn btn-secondary">Fill Online Application Form</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-header text-center">
+                <span class="section-tag">Help & Info</span>
+                <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+                <p class="section-subtitle">You can go through our frequently asked questions to get some answers. If there is any other that may not have been answered, please contact our admission officer.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">Is Gladys school approved by the government? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes, Gladys school is a private school in Lagos State fully approved by the government.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Are there qualified teachers in the school? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes, there are highly qualified teachers in the school. They are all graduates with teaching experience.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How have the results in external examinations been over the years? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>The results in WAEC and NECO have been consistently outstanding over the years.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you have a good transport system? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes, we have school buses that ply four major routes: Ajegunle, Agiliti, Alapere and Ikosi.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Are pupils/students disciplined? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes, pupils and students are strictly disciplined both morally and academically.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Are there required laboratories for practicals in the school? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>There are required, fully-equipped laboratories for practicals. Students perform practical experiments duly from time to time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light" id="contact-admissions">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Reach Out</span>
+                <h2 class="section-title">Get in Touch with the <span class="accent">Admission Office</span></h2>
+                <p class="section-subtitle">You can visit the school admission office to purchase the school form and Prospectus, or contact us using the details below.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="far fa-clock"></i>
+                    <h3>Office Hours</h3>
+                    <p>Monday to Friday</p>
+                    <p>9:00 AM to 4:00 PM</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Phone Lines</h3>
+                    <p>+234 701 105 5122</p>
+                    <p>+234 802 501 6072</p>
+                </div>
+                <div class="contact-card">
+                    <i class="far fa-envelope"></i>
+                    <h3>Email Address</h3>
+                    <p><a href="mailto:info@gladysschools.com">info@gladysschools.com</a></p>
+                    <p>Send us a direct inquiry</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="logo footer-logo">
+                        <img src="assets/logo.png" alt="Gladys Schools Logo" class="logo-img">
+                        <span class="logo-text">Gladys <span class="accent">Schools</span></span>
+                    </div>
+                    <p>Empowering minds and shaping the future through quality, affordable education and strong moral values.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#academics">Academics</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Campuses</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 88 Demurin St, Ketu</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 24 Adepitan St, Alapere Ketu</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 1 Ola Bello St, Ketu</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +234 (0) 123 456 7890</li>
+                        <li><i class="fas fa-envelope"></i> info@gladysschools.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gladys Schools. All Rights Reserved. Designed with excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme toggle: bottom LEFT -->
+    <div class="theme-container">
+        <button id="theme-toggle" class="float-btn theme-float" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+    </div>
+
+    <!-- WhatsApp: bottom RIGHT -->
+    <div class="whatsapp-container">
+        <a href="https://wa.me/2348025016072" target="_blank" class="float-btn whatsapp-float" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            let newTheme = theme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            if (newTheme === 'dark') {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+        // Simple sticky navbar effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.add('scrolled'); // keep it scrolled on subpages so text is visible on white bg
+            }
+        });
+        
+        // Ensure navbar is styled correctly on load
+        document.querySelector('.navbar').style.background = 'rgba(255, 255, 255, 0.95)';
+        document.querySelector('.navbar').style.boxShadow = 'var(--shadow-sm)';
+        document.querySelectorAll('.nav-links a').forEach(el => el.style.color = 'var(--text-main)');
+        document.querySelector('.logo-text').style.color = 'var(--primary)';
+        document.querySelector('.nav-links a.active').style.color = 'var(--accent)';
+
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const isActive = button.classList.contains('active');
+                
+                // Close all other accordions
+                document.querySelectorAll('.faq-question').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.nextElementSibling.style.maxHeight = null;
+                });
+
+                if (!isActive) {
+                    button.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

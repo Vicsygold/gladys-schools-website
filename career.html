@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Gladys Schools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-image: linear-gradient(rgba(15, 40, 98, 0.85), rgba(15, 40, 98, 0.85)), url('assets/new_hero.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-title {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+        
+        /* Vacancy Banner */
+        .vacancy-banner {
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            color: var(--primary-dark);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+        .vacancy-content h2 {
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .vacancy-content p {
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+        .vacancy-tag {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Career Paths */
+        .path-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .path-card {
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 16px;
+            padding: 32px;
+            transition: var(--transition);
+        }
+        .path-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+        .path-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-light);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+        .path-card:hover .path-icon {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Core Values Sidebar */
+        .values-sidebar {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            height: 100%;
+        }
+        .values-sidebar h3 {
+            color: var(--white);
+            margin-bottom: 24px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            padding-bottom: 16px;
+        }
+        .value-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .value-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 4px;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        .contact-box i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+        @media (max-width: 768px) {
+            .vacancy-banner { flex-direction: column; text-align: center; }
+            .path-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar scrolled">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo.png" alt="Gladys Schools Logo" class="logo-img">
+                    <span class="logo-text">Gladys <span class="accent">Schools</span></span>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="index.html#academics">Academics</a>
+                <a href="admission.html">Admissions</a>
+                <a href="career.html" class="active">Careers</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="https://forms.gle/RJkUyszHGyeey3H2A" target="_blank" class="btn btn-primary">Apply Now</a>
+            </div>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container fade-in-up">
+            <h1 class="page-title">Careers</h1>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8); margin-bottom: 0;">Join our team of dedicated professionals shaping the future.</p>
+        </div>
+    </div>
+
+    <div class="container fade-in-up delay-1">
+        <div class="vacancy-banner">
+            <div class="vacancy-content">
+                <h2><span class="vacancy-tag">Urgent Vacancy</span> English Language Teacher</h2>
+                <p>We are currently seeking a qualified English Language subject teacher for Gladys High School.</p>
+                <p style="font-size: 0.875rem; opacity: 0.9; margin-top: 8px;"><i class="fas fa-graduation-cap"></i> Requirement: B.A / B.A (Ed) in English Language</p>
+            </div>
+            <div>
+                <a href="mailto:info@gladysschools.com" class="btn btn-secondary">Submit CV</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Opportunities</span>
+                <h2 class="section-title">Career <span class="accent">Paths</span></h2>
+                <p class="section-subtitle">We have opportunities across various departments for dedicated individuals looking to grow with us.</p>
+            </div>
+            
+            <div class="path-grid">
+                <div class="path-card">
+                    <div class="path-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Teaching Staff</h3>
+                    <p>Apply as teaching staff in our high school if you have a degree in Education in any of the subjects taken in high school.</p>
+                </div>
+                <div class="path-card">
+                    <div class="path-icon"><i class="fas fa-book-reader"></i></div>
+                    <h3>Classroom Teacher</h3>
+                    <p>If you are an experienced primary school teacher, there is an opportunity to pursue a rewarding career in our primary sections.</p>
+                </div>
+                <div class="path-card">
+                    <div class="path-icon"><i class="fas fa-baby"></i></div>
+                    <h3>Creche Teacher</h3>
+                    <p>Opportunities for compassionate individuals who are excellent at handling children and teaching in our creche sections.</p>
+                </div>
+                <div class="path-card">
+                    <div class="path-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Non-Teaching Staff</h3>
+                    <p>Pursue a career with us in the admin office, or as dedicated cleaners and security officers maintaining our environment.</p>
+                </div>
+                <div class="path-card">
+                    <div class="path-icon"><i class="fas fa-bus"></i></div>
+                    <h3>Drivers</h3>
+                    <p>Opportunities exist in our transport department. We need dedicated, careful drivers and bus attendants.</p>
+                </div>
+                <div class="path-card">
+                    <div class="path-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Chef</h3>
+                    <p>We need a qualified chef in our kitchen department. We believe in serving the students and pupils good, nutritious meals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="contact-box">
+                    <i class="far fa-paper-plane"></i>
+                    <h2 class="section-title">Apply <span class="accent">Today</span></h2>
+                    <p style="margin-bottom: 24px;">Send in your resume for any position you feel qualified for to our admin office. We will get back to you when you meet our criteria.</p>
+                    
+                    <div style="text-align: left; background: var(--bg-light); padding: 24px; border-radius: 8px; margin-bottom: 24px;">
+                        <h4 style="color: var(--primary); margin-bottom: 12px;"><i class="fas fa-envelope"></i> Email Your CV</h4>
+                        <p><strong>info@gladysschools.com</strong> or <strong>admin@gladysschools.com</strong></p>
+                        
+                        <h4 style="color: var(--primary); margin: 24px 0 12px;"><i class="fab fa-whatsapp"></i> WhatsApp E-Copy</h4>
+                        <p><strong>0902 371 9502</strong></p>
+                    </div>
+
+                    <div style="text-align: left; padding: 0 24px;">
+                        <p><i class="far fa-clock accent"></i> <strong>Admin Office Hours:</strong> Mon - Fri, 8:00 AM to 3:00 PM</p>
+                        <p><i class="fas fa-phone-alt accent"></i> <strong>Calls:</strong> 09023719502 / 07011055122</p>
+                    </div>
+                </div>
+
+                <div class="values-sidebar">
+                    <h3>Our Core Values</h3>
+                    <p style="margin-bottom: 32px; color: rgba(255,255,255,0.8);">Gladys school stands for this, and we are not ready to bend it for anything.</p>
+                    
+                    <div class="value-item">
+                        <i class="fas fa-ban"></i>
+                        <div>
+                            <h4 style="color: var(--accent); margin-bottom: 8px;">Zero Tolerance</h4>
+                            <p style="font-size: 0.875rem;">Strict zero tolerance policy on any form of examination malpractice.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <h4 style="color: var(--accent); margin-bottom: 8px;">Qualified Teachers</h4>
+                            <p style="font-size: 0.875rem;">We only employ qualified, experienced, and dedicated teaching professionals.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-microscope"></i>
+                        <div>
+                            <h4 style="color: var(--accent); margin-bottom: 8px;">Well-Equipped Labs</h4>
+                            <p style="font-size: 0.875rem;">State-of-the-art laboratories and facilities for practical learning.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-school"></i>
+                        <div>
+                            <h4 style="color: var(--accent); margin-bottom: 8px;">Conducive Environment</h4>
+                            <p style="font-size: 0.875rem;">Safe, clean, and highly conducive classrooms for optimal learning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="logo footer-logo">
+                        <img src="assets/logo.png" alt="Gladys Schools Logo" class="logo-img">
+                        <span class="logo-text">Gladys <span class="accent">Schools</span></span>
+                    </div>
+                    <p>Empowering minds and shaping the future through quality, affordable education and strong moral values.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#academics">Academics</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Campuses</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 88 Demurin St, Ketu</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 24 Adepitan St, Alapere Ketu</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 1 Ola Bello St, Ketu</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +234 902 371 9502</li>
+                        <li><i class="fas fa-envelope"></i> info@gladysschools.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gladys Schools. All Rights Reserved. Designed with excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme toggle: bottom LEFT -->
+    <div class="theme-container">
+        <button id="theme-toggle" class="float-btn theme-float" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+    </div>
+
+    <!-- WhatsApp: bottom RIGHT -->
+    <div class="whatsapp-container">
+        <a href="https://wa.me/2348025016072" target="_blank" class="float-btn whatsapp-float" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            let newTheme = theme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            if (newTheme === 'dark') {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+        // Simple sticky navbar effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.add('scrolled');
+            }
+        });
+        
+        // Ensure navbar is styled correctly on load
+        document.querySelector('.navbar').style.background = 'rgba(255, 255, 255, 0.95)';
+        document.querySelector('.navbar').style.boxShadow = 'var(--shadow-sm)';
+        document.querySelectorAll('.nav-links a').forEach(el => el.style.color = 'var(--text-main)');
+        document.querySelector('.logo-text').style.color = 'var(--primary)';
+        document.querySelector('.nav-links a.active').style.color = 'var(--accent)';
+    </script>
+</body>
+</html>

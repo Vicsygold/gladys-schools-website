@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Gladys Schools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-image: linear-gradient(rgba(15, 40, 98, 0.85), rgba(15, 40, 98, 0.85)), url('assets/classroom.png');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-title {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+        .quote-block {
+            background: var(--bg-light);
+            padding: 40px;
+            border-left: 4px solid var(--accent);
+            border-radius: 0 16px 16px 0;
+            margin: 32px 0;
+            position: relative;
+        }
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 3rem;
+            color: rgba(245, 179, 1, 0.2);
+        }
+        .quote-text {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+        .quote-author {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.125rem;
+        }
+        .quote-title {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        .vmp-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+        .vmp-card {
+            background: var(--white);
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border-top: 4px solid var(--accent);
+        }
+        .vmp-card h3 {
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+        .anthem-hymn-section {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        .anthem-hymn-section h2 {
+            color: var(--white);
+        }
+        .lyric-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 16px;
+            height: 100%;
+        }
+        .lyric-box h3 {
+            color: var(--accent);
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+        }
+        .lyric-text {
+            font-size: 1rem;
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .lyric-text ol {
+            padding-left: 20px;
+        }
+        .lyric-text li {
+            margin-bottom: 16px;
+        }
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+        .activity-card {
+            display: flex;
+            gap: 24px;
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+        .activity-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar scrolled">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo.png" alt="Gladys Schools Logo" class="logo-img">
+                    <span class="logo-text">Gladys <span class="accent">Schools</span></span>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About Us</a>
+                <a href="index.html#academics">Academics</a>
+                <a href="admission.html">Admissions</a>
+                <a href="career.html">Careers</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#apply" class="btn btn-primary">Apply Now</a>
+            </div>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container fade-in-up">
+            <h1 class="page-title">About Us</h1>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8); margin-bottom: 0;">Innovation that excites. Excellence that inspires.</p>
+        </div>
+    </div>
+
+    <section class="container vmp-cards fade-in-up delay-1">
+        <div class="vmp-card">
+            <h3><i class="fas fa-eye mb-2 block accent"></i> Our Vision</h3>
+            <p>To provide a strong Christian foundation for the moral and educational development of every child who has the privilege of coming into any of our schools. We build the best in partnership with parents.</p>
+        </div>
+        <div class="vmp-card">
+            <h3><i class="fas fa-bullseye mb-2 block accent"></i> Our Mission</h3>
+            <p>To mould lives, give every child equal opportunity to acquire quality education, and instill confidence. We aim to reshape society by empowering every child's conscience and intelligence.</p>
+        </div>
+        <div class="vmp-card">
+            <h3><i class="fas fa-lightbulb mb-2 block accent"></i> Our Philosophy</h3>
+            <p>Education without discrimination by religion, politics, tribe, race, class, or sex. Admission and promotion are purely on academic merit, encouraging students to be their best.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2 align-center">
+                <div>
+                    <span class="section-tag">Welcome</span>
+                    <h2 class="section-title">A Tradition of <span class="accent">Excellence</span></h2>
+                    <p>Gladys School is a private yet affordable school offering a stimulating curriculum and a supportive environment to ensure our students experience success every day. We focus on scholastic development, personal growth, and ethical enrichment. The result: students who are independent and confident, inquisitive and enthusiastic, responsible, and compassionate.</p>
+                    <p>We believe the school years are the most formative of a child’s life. These early years can breed intellectual apathy or curiosity to seek knowledge. It is a time marked by creative, social, and emotional development, and characterized by a lifelong love of learning and the joys of new, diverse friendships.</p>
+                </div>
+                <div>
+                    <div class="quote-block">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="quote-text">"Carving a niche, I make bold to say, it is really happening in Gladys High school. We are reputably known for outstanding academic prowess. Extra curricula activities are explored too. Would you not like to be part of it?"</p>
+                        <div class="quote-author">Yemi Usani</div>
+                        <div class="quote-title">School Administrator</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <div class="grid grid-2 align-center">
+                <div>
+                    <div class="quote-block">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="quote-text">"At Gladys School, we mould lives, all learners are given equal opportunity to acquire quality education. Staff members have the interests of both the school and learners at heart. Above all, EXCELLENCE is our WATCHWORD."</p>
+                        <div class="quote-author">Morenikeji Osagie</div>
+                        <div class="quote-title">Principal</div>
+                    </div>
+                </div>
+                <div>
+                    <span class="section-tag">Our Legacy</span>
+                    <h2 class="section-title">A Place to <span class="accent">Be</span></h2>
+                    <p>There are schools and there are schools, but Gladys stands tall amongst its peers for cogent reasons that cannot be overlooked. Founded in September 1999 with academic activities kicking off in October of the same year, the sky since then has been the beginning of our aspirations.</p>
+                    <p>Our School provides students with excellent academic programs and a nurturing environment with close student-teacher relationships. We prepare students for success both personally and academically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Beyond Academics</span>
+                <h2 class="section-title">Core Values & Activities</h2>
+                <p class="section-subtitle">This is what Gladys school stands for and we are not ready to bend it for anything.</p>
+            </div>
+            
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <div class="activity-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div>
+                        <h3>Celebrating Moulded Lives</h3>
+                        <p>Celebrating moulded lives is part of our call. Graduating students are major in this area. After a worthwhile college experience, it is only natural to be celebrated out after a good refining and shaping process.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon"><i class="fas fa-running"></i></div>
+                    <div>
+                        <h3>Inter-House Sports</h3>
+                        <p>All work and no play makes Jack a dull boy. At Gladys, we host an Inter-house Sports Competition. The school is mindful of this, and over the years, it has always been fun-filled.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon"><i class="fas fa-bus-alt"></i></div>
+                    <div>
+                        <h3>Extracurricular Excursions</h3>
+                        <p>We have a strong bias for co-curricular activities. We take our students to yearly excursions to places of excitement and learning, like Olumo Rock, Mr. Fish Water Zoo, and the Stock Exchange.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <div>
+                        <h3>Visit to Orphanages</h3>
+                        <p>We leave no stone unturned to give learners an all-round education. A visit to the orphanage with gifts is an avenue we explore to sharpen the lives of learners in the aspect of giving.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section anthem-hymn-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Our Heritage</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">The words that guide our students every day.</p>
+            </div>
+            <div class="grid grid-2">
+                <div class="lyric-box">
+                    <h3>School Anthem</h3>
+                    <div class="lyric-text">
+                        <ol>
+                            <li>May the mind of Christ my Saviour Dwell in me from day to day By His love and power controlling All I do or say</li>
+                            <li>May the word of God dwell richly In my heart from hour to hour So that all may see I triumph, Only through His power</li>
+                            <li>May the peace of God my father, Rule my life in everything, That I may be strong to comfort, Sick and sorrowing</li>
+                            <li>May the love of Jesus fill me, As the waters fill the sea, Him exalting self abasing This is victory</li>
+                            <li>May I run the race before me, Strong and brave to face the foe, Looking only unto Jesus As I onward go</li>
+                            <li>May His beauty rest upon me, As I seek the lost to win And may they forget the channel, Seeing only him</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="lyric-box">
+                    <h3>School Hymn</h3>
+                    <div class="lyric-text">
+                        <ol>
+                            <li>How firm a foundation, Ye saints of the Lord Is laid for your faith in his excellent word What more can he say than to you He hath said You who unto Jesus for refuge have fled?</li>
+                            <li>In every condition in sickness, in health In poverty’s vale or abounding in wealth At home and abroad on the land, on the sea As thy days may demand shall thy strength e’ver be</li>
+                            <li>Fear not, I am with thee oh, be not dismayed I, I am thy God, I will still give thee aid I’ll strengthen thee, help thee and cause thee to stand Upheld by my righteous, Omnipotent hand</li>
+                            <li>"Where through the deep waters, I call thee to go, The rivers of grief shall not thee overflow; For I will be with thee in trouble to bless And sanctify to thee thy deepest distress"</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="logo footer-logo">
+                        <img src="assets/logo.png" alt="Gladys Schools Logo" class="logo-img">
+                        <span class="logo-text">Gladys <span class="accent">Schools</span></span>
+                    </div>
+                    <p>Empowering minds and shaping the future through quality, affordable education and strong moral values.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#academics">Academics</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Campuses</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 88 Demurin St, Ketu</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 24 Adepitan St, Alapere Ketu</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 1 Ola Bello St, Ketu</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +234 (0) 123 456 7890</li>
+                        <li><i class="fas fa-envelope"></i> info@gladysschools.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gladys Schools. All Rights Reserved. Designed with excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme toggle: bottom LEFT -->
+    <div class="theme-container">
+        <button id="theme-toggle" class="float-btn theme-float" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+    </div>
+
+    <!-- WhatsApp: bottom RIGHT -->
+    <div class="whatsapp-container">
+        <a href="https://wa.me/2348025016072" target="_blank" class="float-btn whatsapp-float" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            let newTheme = theme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            if (newTheme === 'dark') {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+        // Simple sticky navbar effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.add('scrolled'); // keep it scrolled on subpages so text is visible on white bg
+            }
+        });
+        
+        // Ensure navbar is styled correctly on load
+        document.querySelector('.navbar').style.background = 'rgba(255, 255, 255, 0.95)';
+        document.querySelector('.navbar').style.boxShadow = 'var(--shadow-sm)';
+        document.querySelectorAll('.nav-links a').forEach(el => el.style.color = 'var(--text-main)');
+        document.querySelector('.logo-text').style.color = 'var(--primary)';
+        document.querySelector('.nav-links a.active').style.color = 'var(--accent)';
+    </script>
+</body>
+</html>
