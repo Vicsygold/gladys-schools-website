@@ -671,6 +671,8 @@ a {
     .cta-buttons, .hero-buttons { flex-direction: column; }
     .footer-grid { grid-template-columns: 1fr; }
     .section { padding: 60px 0; }
+    .vmp-cards { grid-template-columns: 1fr; margin-top: 0; }
+    .activity-grid { grid-template-columns: 1fr; }
 }
 
 /* Dark Mode Theme */
